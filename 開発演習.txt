@@ -1,0 +1,57 @@
+・各テーブルごとのDTO作成　顧客、担当者、商品、注文、明細
+・商品検索DAO、顧客検索DAO、担当者検索DAO、
+
+・会員ログイン、担当者ログイン
+jsp　→サーブレット → ビーンズ(比較)　→DAO操作
+　(パラメータ)
+
+
+・メイン
+DTO商品　DAO商品リストに格納　
+・キーワード検索、ID検索　→DAO、DTO　・ビーンズ必要なし
+サーブレットにDAOから呼び出し→リストに格納
+setAttributeで商品検索結果に反映させる。
+商品検索jspに
+for(item e:list){
+e.get
+}
+
+・各リンクから商品検索に飛ばす方法
+リンク先のdoGetに飛ぶ　→→　商品検索結果画面での話
+キーワード検索
+DAO SELECT itemno FROM	item WHERE	ENAME LIKE '%A%'
+商品ＩＤ検索
+既記述
+
+
+・カートに入れる
+
+
+
+・Arraylist学習
+import java.util.LinkedList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+
+		LinkedList<User> array = new LinkedList<User>();
+		User user = new User();
+		user.setName("花村");
+		user.setAge(23);
+		array.add(user);
+		User user2 = new User();
+		user2.setName("長田");
+		user2.setAge(20);
+		array.add(user2);
+
+		for (int i = 0; i < array.size(); i++) {
+			String name = array.get(i).getName();
+			int age = array.get(i).getAge();
+			System.out.println(name);
+			System.out.println(age);
+		}
+	}
+
+}
